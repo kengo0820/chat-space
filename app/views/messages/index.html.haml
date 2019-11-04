@@ -1,0 +1,35 @@
+.wrapper
+
+  = render 'messages/side_bar'
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group
+          グループ名:グループ③
+        %ul.main-header__left-box__member-list 
+          Member :
+          %li.member
+            kengo
+          %li.member
+            aaa
+      .main-header__button
+        Edit
+    .messages
+      .message
+        .upper-info
+          .upper-info__talker
+            aaa
+          .upper-info__date
+            2019/10/26(Sat)
+        .lower-message
+          .lower-message__content
+            hello!!!
+    .form
+      %form
+        %input.form__message{placeholder: ' send a message'}
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
