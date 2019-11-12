@@ -16,20 +16,13 @@
       .main-header__button
         Edit
     .messages
-      .message
-        .upper-info
-          .upper-info__talker
-            aaa
-          .upper-info__date
-            2019/10/26(Sat)
-        .lower-message
-          .lower-message__content
-            hello!!!
+      = render partial: 'message', collection: @messages
+
     .form
-      %form
-        %input.form__message{placeholder: ' send a message'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class: 'form__mask__image' do 
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+            = f.file_field :image, class: 'hidden'
+        =f.submit 'Send', class: 'form__submit'
