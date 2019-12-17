@@ -1,10 +1,10 @@
 $(function() {
   function addUser(user) {
     let html = `
-      <a class="chat-group-user clearfix">
+      <div class="chat-group-user clearfix">
         <p class="chat-group-user__name">${user.name}</p>
         <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div> 
-      </a>
+      </div>
       `;
       $("#user-search-result").append(html);
   }
